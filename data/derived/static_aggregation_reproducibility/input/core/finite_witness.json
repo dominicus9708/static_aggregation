@@ -1,0 +1,48 @@
+{
+  "paper_version": "English closed candidate, 2026-08-10",
+  "epsilon": 0.01,
+  "delta": 0.1,
+  "grid_points": 8,
+  "channels": {
+    "c0": 0.0,
+    "cepsilon": 0.01,
+    "cplus": 1.0,
+    "cminus": -1.0
+  },
+  "channel_supports": {
+    "F0": ["c0"],
+    "Fpm": ["cplus", "cminus"],
+    "Fepsilon": ["cepsilon"]
+  },
+  "property_records": {
+    "iota_u": 2.0,
+    "iota_b": -2.0,
+    "iota_0": 0.0
+  },
+  "property_supports": {
+    "Gpm": ["iota_u", "iota_b"],
+    "G0": ["iota_0"]
+  },
+  "countable_extension": {
+    "first_term": 1.0,
+    "ratio": 0.5,
+    "terms": 64
+  },
+  "stability": {
+    "measure_mass": [0.5, 0.5],
+    "zeta": [1.0, 3.0],
+    "zeta_prime": [1.2, 2.8],
+    "weight": [0.8, 1.2],
+    "weight_prime": [1.1, 0.9]
+  },
+  "transport": {
+    "scale_J": 2.5,
+    "support": ["cplus", "cepsilon"]
+  },
+  "weighted_structural_descriptor": {
+    "measure_mass": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333],
+    "alpha": [1.0, 2.0, 3.0],
+    "weight": [0.5, 1.0, 1.5]
+  },
+  "tolerance": 1e-12
+}
