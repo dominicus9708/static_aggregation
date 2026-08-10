@@ -4,7 +4,7 @@
 
 This release provides a minimal computational reproduction layer for the English manuscript:
 
-**Channel-Indexed Static Aggregation in Dimensional-Structural Describability: Analytic Realization of Component Terms and Downstream Typed Property Aggregation** — Kwon Dominicus, 2026-08-10.
+**Channel-Indexed Static Aggregation in Dimensional-Structural Describability** — Kwon Dominicus, 2026-08-10.
 
 The code does **not** numerically prove Banach-space theorems. It reproduces finite-dimensional and scalar witnesses of the definitions, inequalities, covariance relations, and information-loss examples stated in the manuscript.
 
