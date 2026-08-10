@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env/
+.DS_Store
+.pytest_cache/
+# Runtime outputs are timestamped. The committed 20260810_110200 snapshot is intentional.
+results/static_aggregation_reproducibility/output/*/*/
+!results/static_aggregation_reproducibility/output/*/20260810_110200/
