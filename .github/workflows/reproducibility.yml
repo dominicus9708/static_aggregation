@@ -1,0 +1,21 @@
+name: basic-reproducibility
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: End-to-end basic reproducibility
+        run: >-
+          python src/static_aggregation_reproducibility/core/integration/run_static_aggregation_integration_001.py
+          --run-id ci
+          --output-root "$RUNNER_TEMP/static_aggregation_results"
