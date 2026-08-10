@@ -1,0 +1,22 @@
+Static aggregation basic reproducibility
+status: PASS
+checks: 16/16 passed
+
+SA-01: PASS — c0: |T|=0.0 <= beta=0.0
+SA-01: PASS — cepsilon: |T|=0.01 <= beta=0.01
+SA-01: PASS — cplus: |T|=1.0 <= beta=1.0
+SA-01: PASS — cminus: |T|=1.0 <= beta=1.0
+SA-02: PASS — F0
+SA-02: PASS — Fpm
+SA-02: PASS — Fepsilon
+SA-03: PASS — absolute norm sum=2.0; reversed finite truncation=2.0
+SA-04: PASS — direct_rhs=0.7999999999999999
+SA-05: PASS — two-channel finite witness
+SA-06: PASS — J(x)=2.5x
+SA-07: PASS — ['cplus', 'cepsilon']
+SA-08: PASS —
+SA-09: PASS —
+SA-10: PASS —
+SA-11: PASS —
+
+Interpretation: computational finite witnesses and regression checks; not a proof of the general Banach-space theorems.
