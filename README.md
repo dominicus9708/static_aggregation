@@ -1,0 +1,2 @@
+# static_aggregation
+static_aggregation
