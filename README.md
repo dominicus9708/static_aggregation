@@ -25,7 +25,7 @@ The computations are **reproducibility witnesses and regression checks, not repl
 
 ```text
 data/derived/static_aggregation_reproducibility/input/core/
-    finite_witness.json          # official final input for v0.1.0
+    finite_witness.json          # official final input for the v0.1.x basic release line
 src/static_aggregation_reproducibility/core/
     skeleton/
     standard/
@@ -86,4 +86,4 @@ See:
 
 ## Release policy
 
-`v0.1.0` is the basic formal reproducibility baseline. Later application releases may add domain-specific input, standard baselines, and application layers, but should keep the basic formal checks intact and separately identified.
+`v0.1.0` established the basic formal reproducibility baseline. `v0.1.1` is the metadata-synchronized patch release aligned with the final shortened manuscript title and contains the same basic reproducibility code and witness data. Later application releases may add domain-specific input, standard baselines, and application layers, but should keep the basic formal checks intact and separately identified.
