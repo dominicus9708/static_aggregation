@@ -1,0 +1,10 @@
+category,item,standard,static_aggregation,abs_error,passed
+channel_term,c0,0.0,0.0,0.0,True
+channel_term,cepsilon,0.01,0.01,0.0,True
+channel_term,cminus,-1.0,-1.0,0.0,True
+channel_term,cplus,1.0,1.0,0.0,True
+finite_channel_aggregate,F0,0.0,0.0,0.0,True
+finite_channel_aggregate,Fepsilon,0.01,0.01,0.0,True
+finite_channel_aggregate,Fpm,0.0,0.0,0.0,True
+finite_property_aggregate,G0,0.0,0.0,0.0,True
+finite_property_aggregate,Gpm,0.0,0.0,0.0,True
