@@ -1,0 +1,17 @@
+check_id,paper_reference,computed,expected,abs_error,passed,note
+SA-01,Section 4: realized component term and channel bound,0.0,0.0,0.0,True,c0: |T|=0.0 <= beta=0.0
+SA-01,Section 4: realized component term and channel bound,0.01,0.01,0.0,True,cepsilon: |T|=0.01 <= beta=0.01
+SA-01,Section 4: realized component term and channel bound,1.0,1.0,0.0,True,cplus: |T|=1.0 <= beta=1.0
+SA-01,Section 4: realized component term and channel bound,-1.0,-1.0,0.0,True,cminus: |T|=1.0 <= beta=1.0
+SA-02,Section 5 / Section 13.1: finite composition,0.0,0.0,0.0,True,F0
+SA-02,Section 5 / Section 13.1: finite composition,0.0,0.0,0.0,True,Fpm
+SA-02,Section 5 / Section 13.1: finite composition,0.01,0.01,0.0,True,Fepsilon
+SA-03,Section 6: absolute countable extension,2.0,2.0,0.0,True,absolute norm sum=2.0; reversed finite truncation=2.0
+SA-04,Section 9: channelwise combined stability,0.2799999999999998,1.04,0.0,True,direct_rhs=0.7999999999999999
+SA-05,Section 9: finite composite stability,0.5599999999999996,2.08,0.0,True,two-channel finite witness
+SA-06,Section 10: analytic transport condition (E9),True,True,0.0,True,J(x)=2.5x
+SA-07,Section 10: finite composite covariance,2.525,2.525,0.0,True,"['cplus', 'cepsilon']"
+SA-08,Section 11 / Section 13.1: channel support collision,True,True,0.0,True,
+SA-09,Section 11 / Section 13.2: property support collision,True,True,0.0,True,
+SA-10,Section 13.3: combined static descriptor collision,"(0.0, 0.0)","(0.0, 0.0)",0.0,True,
+SA-11,Section 12: one-channel scalar D_w specialization,2.3333333333333335,2.3333333333333335,0.0,True,
