@@ -2,7 +2,7 @@
 
 Reproducibility code for the English manuscript:
 
-**Kwon Dominicus, _Channel-Indexed Static Aggregation in Dimensional-Structural Describability: Analytic Realization of Component Terms and Downstream Typed Property Aggregation_ (2026-08-10).**
+**Kwon Dominicus, _Channel-Indexed Static Aggregation in Dimensional-Structural Describability_ (2026-08-10).**
 
 This repository starts with a **basic formal/computational reproducibility release**. It intentionally excludes concrete, materials, cosmology, and other application-specific models. Those should be added later as separate application releases without changing the meaning of this baseline.
 
