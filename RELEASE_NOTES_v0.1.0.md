@@ -2,7 +2,7 @@
 
 This release establishes the basic computational reproducibility baseline for:
 
-**Kwon Dominicus, _Channel-Indexed Static Aggregation in Dimensional-Structural Describability: Analytic Realization of Component Terms and Downstream Typed Property Aggregation_ (English closed manuscript, 2026-08-10).**
+**Kwon Dominicus, _Channel-Indexed Static Aggregation in Dimensional-Structural Describability_ (English closed manuscript, 2026-08-10).**
 
 ## Included
 
