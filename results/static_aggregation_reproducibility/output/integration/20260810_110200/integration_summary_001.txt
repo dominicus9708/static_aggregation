@@ -1,0 +1,5 @@
+Static aggregation integration summary
+status: PASS
+baseline comparisons: 9/9 passed
+analytic checks: 16/16 passed
+scope: formal/basic reproducibility only; no application dataset included.
