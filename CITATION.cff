@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this reproducibility pipeline, please cite the repository and the associated DSD static aggregation manuscript."
+title: "Static Aggregation Reproducibility Pipeline for Dimensional-Structural Describability"
+type: software
+authors:
+  - family-names: "Dominicus"
+    given-names: "Kwon"
+preferred-citation:
+  type: article
+  title: "Channel-Indexed Static Aggregation in Dimensional-Structural Describability: Analytic Realization of Component Terms and Downstream Typed Property Aggregation"
+  authors:
+    - family-names: "Dominicus"
+      given-names: "Kwon"
+  year: 2026
+repository-code: "https://github.com/dominicus9708/static_aggregation"
+version: "0.1.0"
+date-released: 2026-08-10
