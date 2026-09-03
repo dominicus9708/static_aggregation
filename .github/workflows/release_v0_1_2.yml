@@ -1,0 +1,24 @@
+name: refresh-release-v0.1.2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'release/v0.1.2.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Move tag and refresh GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method PATCH "repos/${GITHUB_REPOSITORY}/git/refs/tags/v0.1.2" -f sha="${GITHUB_SHA}" -F force=true
+          gh release edit v0.1.2 \
+            --title "v0.1.2 — General Property Interface Synchronization" \
+            --notes-file RELEASE_NOTES_v0.1.2.md

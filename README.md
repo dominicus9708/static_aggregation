@@ -4,7 +4,7 @@ Reproducibility code for the English canonical manuscript revision:
 
 **Kwon Dominicus, _Channel-Indexed Static Aggregation in Dimensional-Structural Describability_ (2026-09-02).**
 
-The `v0.2.x` line synchronizes the basic formal/computational pipeline with the generalized Property Axiom System interface while preserving the channel-indexed analytic core. It intentionally excludes concrete, materials, cosmology, and other application-specific models. Those should be added later as separate application releases without changing the meaning of this baseline.
+`v0.1.2` synchronizes the basic formal/computational pipeline with the generalized Property Axiom System interface while preserving the channel-indexed analytic core. It intentionally excludes concrete, materials, cosmology, and other application-specific models. Those should be added later as separate application releases without changing the meaning of this baseline.
 
 ## What this release reproduces
 
@@ -25,7 +25,7 @@ The computations are **reproducibility witnesses and regression checks, not repl
 
 ## Generalized property interface
 
-The official `v0.2.x` input encodes each selected defined property datum with:
+The official `v0.1.2` input encodes each selected defined property datum with:
 
 ```json
 {
@@ -42,7 +42,7 @@ The binary datum remains attached to the full typed input pair. The reproducibil
 
 ```text
 data/derived/static_aggregation_reproducibility/input/core/
-    finite_witness.json          # official v0.2.x core witness
+    finite_witness.json          # official v0.1.2 core witness
 src/static_aggregation_reproducibility/core/
     skeleton/
     standard/
@@ -85,7 +85,7 @@ Outputs are created under:
 results\static_aggregation_reproducibility\output\<stage>\YYYYMMDD_HHMMSS\
 ```
 
-To use a fixed run ID:
+To use the committed reference run ID:
 
 ```bat
 py -3.11 src\static_aggregation_reproducibility\core\integration\run_static_aggregation_integration_001.py --run-id 20260903_132600
@@ -93,14 +93,14 @@ py -3.11 src\static_aggregation_reproducibility\core\integration\run_static_aggr
 
 ## Validation status
 
-The `v0.2.0` synchronization check produced:
+The `v0.1.2` synchronization check produced:
 
 - Unit tests: **9/9 PASS**
 - Static/manuscript checks: **16/16 PASS**
 - Standard-vs-static integration comparisons: **10/10 PASS**
 - Typed property schema and support resolution: **PASS**
 
-The committed `20260903_132600` reference snapshot is generated from the official `v0.2.x` input.
+The committed `20260903_132600` reference snapshot is generated from the official `v0.1.2` input.
 
 See:
 
@@ -112,6 +112,6 @@ See:
 
 - `v0.1.0` established the original basic formal reproducibility baseline.
 - `v0.1.1` synchronized metadata with the shortened 2026-08-10 manuscript title.
-- `v0.2.0` synchronizes the repository with the 2026-09-02 generalized static-aggregation manuscript and the general Property Axiom System interface.
+- `v0.1.2` synchronizes the repository with the 2026-09-02 generalized static-aggregation manuscript and the general Property Axiom System interface.
 
 Later application releases may add domain-specific input, standard baselines, and application layers, but should keep the basic formal checks intact and separately identified.

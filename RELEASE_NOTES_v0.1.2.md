@@ -1,6 +1,6 @@
-# v0.2.0 — General Property Interface Synchronization
+# v0.1.2 — General Property Interface Synchronization
 
-This release synchronizes the repository with the generalized English canonical manuscript revision:
+This patch release synchronizes the repository with the generalized English canonical manuscript revision:
 
 **Kwon Dominicus, _Channel-Indexed Static Aggregation in Dimensional-Structural Describability_ (2026-09-02).**
 
@@ -17,13 +17,12 @@ This release synchronizes the repository with the generalized English canonical 
 
 ## Validation status
 
-Validated locally against the synchronized source tree:
-
 - Unit tests: **9/9 PASS**
 - Static/manuscript checks: **16/16 PASS**
 - Standard-vs-static integration comparisons: **10/10 PASS**
 - Typed property schema: **PASS**
 - Property support resolution: **PASS**
+- GitHub Actions basic reproducibility workflow: **PASS**
 
 ## Scope
 
