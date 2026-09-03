@@ -7,7 +7,7 @@ from pathlib import Path
 CORE = Path(__file__).resolve().parents[1] / "src" / "static_aggregation_reproducibility" / "core"
 sys.path.insert(0, str(CORE))
 
-from common import beta_bound, close, component_term, finite_comp, geometric_infinite, geometric_partial, property_aggregate, scalar_transport, stability_witness, static_descriptor, weighted_structural_descriptor
+from common import beta_bound, close, component_term, finite_comp, geometric_infinite, geometric_partial, property_aggregate, property_arity, scalar_transport, stability_witness, static_descriptor, validate_property_record, weighted_structural_descriptor
 
 
 class StaticAggregationCoreTests(unittest.TestCase):
@@ -29,7 +29,15 @@ class StaticAggregationCoreTests(unittest.TestCase):
         self.assertLessEqual(r["direct_rhs"],r["sup_rhs"]+1e-12)
 
     def test_property_collision(self):
-        props={"u":2.0,"b":-2.0,"z":0.0}
+        props={
+            "u":{"kind":"varpi_u","profile":["channel"],"input":["cplus"],"value":2.0},
+            "b":{"kind":"varpi_b","profile":["channel","channel"],"input":["cplus","cminus"],"value":-2.0},
+            "z":{"kind":"varpi_0","profile":["channel"],"input":["cminus"],"value":0.0},
+        }
+        self.assertTrue(all(validate_property_record(r) for r in props.values()))
+        self.assertEqual(property_arity(props["u"]),1)
+        self.assertEqual(property_arity(props["b"]),2)
+        self.assertNotIn("owner",props["b"])
         self.assertEqual(property_aggregate(props,["u","b"]),property_aggregate(props,["z"]))
 
     def test_combined_collision(self):

@@ -1,0 +1,6 @@
+Static aggregation integration summary
+status: PASS
+baseline comparisons: 10/10 passed
+analytic checks: 16/16 passed
+typed property data: preserved across standard and static layers
+scope: formal/basic reproducibility only; no application dataset included.

@@ -35,13 +35,15 @@ def run(input_path: Path, output_root_arg: str | None, run_id: str) -> dict:
     for support, baseline in standard["property_aggregates"].items():
         computed = theory["property_aggregates"][support]
         comparisons.append({"category":"finite_property_aggregate","item":support,"standard":baseline,"static_aggregation":computed,"abs_error":abs(computed-baseline),"passed":close(computed,baseline,tol)})
+    typed_property_records_preserved = standard["property_records"] == theory["property_records"]
+    comparisons.append({"category":"typed_property_data","item":"property_records","standard":"preserved","static_aggregation":"preserved" if typed_property_records_preserved else "changed","abs_error":0.0 if typed_property_records_preserved else 1.0,"passed":typed_property_records_preserved})
     passed = theory["status"] == "PASS" and all(row["passed"] for row in comparisons)
     out = stage_dir("integration",run_id,output_root)
     write_csv(out/"integration_master_comparison.csv",comparisons,["category","item","standard","static_aggregation","abs_error","passed"])
     result = {"status":"PASS" if passed else "FAIL","run_id":run_id,"input":str(input_path),"standard_values":str(standard_path),"static_aggregation_values":str(theory_path),"comparisons":comparisons,"theory_check_count":len(theory["checks"]),"theory_checks_passed":sum(1 for c in theory["checks"] if c["passed"])}
     write_json(out/"integration_values.json",result)
     write_json(out/"manifest.json",{"run_id":run_id,"input":str(input_path),"script":"run_static_aggregation_integration_001.py","stages":["skeleton","standard","static_aggregation","integration"],"theory_layer":"static_aggregation","status":result["status"],"output_root":str(output_root)})
-    write_text(out/"integration_summary_001.txt","\n".join(["Static aggregation integration summary",f"status: {result['status']}",f"baseline comparisons: {sum(1 for r in comparisons if r['passed'])}/{len(comparisons)} passed",f"analytic checks: {result['theory_checks_passed']}/{result['theory_check_count']} passed","scope: formal/basic reproducibility only; no application dataset included."]))
+    write_text(out/"integration_summary_001.txt","\n".join(["Static aggregation integration summary",f"status: {result['status']}",f"baseline comparisons: {sum(1 for r in comparisons if r['passed'])}/{len(comparisons)} passed",f"analytic checks: {result['theory_checks_passed']}/{result['theory_check_count']} passed","typed property data: preserved across standard and static layers","scope: formal/basic reproducibility only; no application dataset included."]))
     return result
 
 

@@ -1,5 +1,5 @@
 {
-  "paper_version": "English closed candidate, 2026-08-10",
+  "paper_version": "English canonical revision, 2026-09-02",
   "epsilon": 0.01,
   "delta": 0.1,
   "grid_points": 8,
@@ -15,9 +15,24 @@
     "Fepsilon": ["cepsilon"]
   },
   "property_records": {
-    "iota_u": 2.0,
-    "iota_b": -2.0,
-    "iota_0": 0.0
+    "iota_u": {
+      "kind": "varpi_u",
+      "profile": ["channel"],
+      "input": ["cplus"],
+      "value": 2.0
+    },
+    "iota_b": {
+      "kind": "varpi_b",
+      "profile": ["channel", "channel"],
+      "input": ["cplus", "cminus"],
+      "value": -2.0
+    },
+    "iota_0": {
+      "kind": "varpi_0",
+      "profile": ["channel"],
+      "input": ["cminus"],
+      "value": 0.0
+    }
   },
   "property_supports": {
     "Gpm": ["iota_u", "iota_b"],

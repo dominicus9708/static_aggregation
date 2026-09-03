@@ -94,8 +94,37 @@ def finite_comp(terms: Mapping[str, float], support: Iterable[str]) -> float:
     return sum(terms[c] for c in support)
 
 
-def property_aggregate(records: Mapping[str, float], support: Iterable[str]) -> float:
-    return sum(records[r] for r in support)
+def validate_property_record(record: Mapping[str, object]) -> bool:
+    required = {"kind", "profile", "input", "value"}
+    if not required.issubset(record):
+        return False
+    profile = record["profile"]
+    inputs = record["input"]
+    if not isinstance(profile, list) or not isinstance(inputs, list):
+        return False
+    if len(profile) == 0 or len(profile) != len(inputs):
+        return False
+    try:
+        float(record["value"])
+    except (TypeError, ValueError):
+        return False
+    return True
+
+
+def property_value(record: Mapping[str, object]) -> float:
+    if not validate_property_record(record):
+        raise ValueError("property record must contain kind, profile, input, and numeric value with matching nonempty profile/input arity")
+    return float(record["value"])
+
+
+def property_arity(record: Mapping[str, object]) -> int:
+    if not validate_property_record(record):
+        raise ValueError("invalid typed property record")
+    return len(record["profile"])
+
+
+def property_aggregate(records: Mapping[str, Mapping[str, object]], support: Iterable[str]) -> float:
+    return sum(property_value(records[r]) for r in support)
 
 
 def static_descriptor(channel_value: float, property_value: float) -> tuple[float, float]:

@@ -1,10 +1,10 @@
 # Static Aggregation — Basic Reproducibility Pipeline
 
-Reproducibility code for the English manuscript:
+Reproducibility code for the English canonical manuscript revision:
 
-**Kwon Dominicus, _Channel-Indexed Static Aggregation in Dimensional-Structural Describability_ (2026-08-10).**
+**Kwon Dominicus, _Channel-Indexed Static Aggregation in Dimensional-Structural Describability_ (2026-09-02).**
 
-This repository starts with a **basic formal/computational reproducibility release**. It intentionally excludes concrete, materials, cosmology, and other application-specific models. Those should be added later as separate application releases without changing the meaning of this baseline.
+The `v0.2.x` line synchronizes the basic formal/computational pipeline with the generalized Property Axiom System interface while preserving the channel-indexed analytic core. It intentionally excludes concrete, materials, cosmology, and other application-specific models. Those should be added later as separate application releases without changing the meaning of this baseline.
 
 ## What this release reproduces
 
@@ -15,17 +15,34 @@ This repository starts with a **basic formal/computational reproducibility relea
 - channel and finite-family stability inequalities;
 - a finite-dimensional witness of analytic transport condition (E9);
 - finite composite covariance;
-- channel-support, property-support, and combined descriptor collisions;
+- channel-support, typed-property-support, and combined descriptor collisions;
+- a general typed-property witness containing unary and binary property data;
+- preservation of the binary input pair without introducing an owner channel;
 - one-channel scalar `D_w` specialization;
 - the finite worked witnesses from Section 13.
 
 The computations are **reproducibility witnesses and regression checks, not replacements for the paper's general proofs**.
 
+## Generalized property interface
+
+The official `v0.2.x` input encodes each selected defined property datum with:
+
+```json
+{
+  "kind": "varpi_b",
+  "profile": ["channel", "channel"],
+  "input": ["cplus", "cminus"],
+  "value": -2.0
+}
+```
+
+The binary datum remains attached to the full typed input pair. The reproducibility layer does not assign it to either participating channel unless an additional allocation rule is explicitly supplied.
+
 ## Repository layout
 
 ```text
 data/derived/static_aggregation_reproducibility/input/core/
-    finite_witness.json          # official final input for the v0.1.x basic release line
+    finite_witness.json          # official v0.2.x core witness
 src/static_aggregation_reproducibility/core/
     skeleton/
     standard/
@@ -71,12 +88,19 @@ results\static_aggregation_reproducibility\output\<stage>\YYYYMMDD_HHMMSS\
 To use a fixed run ID:
 
 ```bat
-py -3.11 src\static_aggregation_reproducibility\core\integration\run_static_aggregation_integration_001.py --run-id 20260810_110200
+py -3.11 src\static_aggregation_reproducibility\core\integration\run_static_aggregation_integration_001.py --run-id 20260903_132600
 ```
 
 ## Validation status
 
-The committed reference snapshot is produced from the same official input and should report all checks as `PASS`.
+The `v0.2.0` synchronization check produced:
+
+- Unit tests: **9/9 PASS**
+- Static/manuscript checks: **16/16 PASS**
+- Standard-vs-static integration comparisons: **10/10 PASS**
+- Typed property schema and support resolution: **PASS**
+
+The committed `20260903_132600` reference snapshot is generated from the official `v0.2.x` input.
 
 See:
 
@@ -86,4 +110,8 @@ See:
 
 ## Release policy
 
-`v0.1.0` established the basic formal reproducibility baseline. `v0.1.1` is the metadata-synchronized patch release aligned with the final shortened manuscript title and contains the same basic reproducibility code and witness data. Later application releases may add domain-specific input, standard baselines, and application layers, but should keep the basic formal checks intact and separately identified.
+- `v0.1.0` established the original basic formal reproducibility baseline.
+- `v0.1.1` synchronized metadata with the shortened 2026-08-10 manuscript title.
+- `v0.2.0` synchronizes the repository with the 2026-09-02 generalized static-aggregation manuscript and the general Property Axiom System interface.
+
+Later application releases may add domain-specific input, standard baselines, and application layers, but should keep the basic formal checks intact and separately identified.
